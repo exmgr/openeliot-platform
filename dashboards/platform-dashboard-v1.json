@@ -1,0 +1,1315 @@
+{
+  "title": "Overview v1",
+  "configuration": {
+    "widgets": {
+      "5b31c1e5-3b87-9abf-f95e-c319b827045f": {
+        "isSystemType": true,
+        "bundleAlias": "maps_v2",
+        "typeAlias": "openstreetmap",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 14,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "latitude",
+                  "type": "attribute",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5699777074047059
+                },
+                {
+                  "name": "longitude",
+                  "type": "attribute",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.13157343908544994
+                }
+              ],
+              "entityAliasId": "809c3036-1f86-acd3-1b76-102bfad08e55"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "fitMapBounds": true,
+            "latKeyName": "latitude",
+            "lngKeyName": "longitude",
+            "showLabel": true,
+            "label": "${entityName}",
+            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See advanced settings for details</small>",
+            "markerImageSize": 36,
+            "useColorFunction": false,
+            "markerImages": [],
+            "useMarkerImageFunction": false,
+            "color": "#ff1744",
+            "mapProvider": "CartoDB.Positron",
+            "showTooltip": true,
+            "autocloseTooltip": true,
+            "tooltipFunction": "var deviceType = dsData[dsIndex]['deviceType'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<b>${entityName}</b><br/><b>Energy:</b> ${energy:2} kWt<br/>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<b>${entityName}</b><br/><b>Temperature:</b> ${temperature:2} °C<br/>';\r\n    }\r\n}",
+            "customProviderTileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "showTooltipAction": "click",
+            "polygonKeyName": "coordinates",
+            "polygonOpacity": 0.5,
+            "polygonStrokeOpacity": 1,
+            "polygonStrokeWeight": 1,
+            "labelFunction": "var deviceType = dsData[dsIndex]['deviceType'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<span style=\"color:orange;\">${entityName}, ${energy:2} kWt</span>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<span style=\"color:blue;\">${entityName}, ${temperature:2} °C</span>';\r\n    }\r\n}"
+          },
+          "title": "Deployments",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "5b31c1e5-3b87-9abf-f95e-c319b827045f"
+      },
+      "3685abc6-d8ae-3469-6de5-df4ad6d764d2": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 0.5 + Math.random() * 2.5;",
+                  "units": "m",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "3685abc6-d8ae-3469-6de5-df4ad6d764d2"
+      },
+      "19bc1dca-b918-0d29-d551-5b001081755d": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 1,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(33, 33, 33)",
+          "padding": "8px",
+          "settings": {
+            "cardHtml": "<div class='card'><span class='title'>Pikrodafni</span><span>Live Monitoring</span></div>",
+            "cardCss": ".card {\n    height: 100%;\n    font-size: 1.1em;\n    font-weight: 400;\n    display: flex;\n    align-items: flex-start;\n}\n\n.title {\n    font-weight: 500;\n    margin-right: 4px;\n}"
+          },
+          "title": "Live Monitoring",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "19bc1dca-b918-0d29-d551-5b001081755d"
+      },
+      "df482733-1bf5-9981-4044-8536e578ddb8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_hierarchy",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 8,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "nodeRelationQueryFunction": "/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: types.entitySearchDirection.from,\n        relationTypeGroup: \"COMMON\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
+            "nodeHasChildrenFunction": "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
+            "nodeIconFunction": "/** \n\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Where:\n    - 'materialIcon' - name of the material icon to be used from the Material Icons Library (https://material.io/tools/icons);\n    - 'iconUrl' - url of the external image to be used as node icon.\n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('Test')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n \n**/\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === \"ASSET\") return {materialIcon: 'place'};\nreturn 'default';",
+            "nodeDisabledFunction": "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
+            "nodesSortFunction": "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/",
+            "nodeOpenedFunction": "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n ",
+            "nodeTextFunction": "var entity = nodeCtx.entity;\nif (entity.id.entityType === \"ASSET\") return entity.name;\nvar nodeName = `${entity.name}`;\nvar nodeLabel = `${entity.label}`;\nreturn nodeLabel !== null ? nodeLabel : nodeName;"
+          },
+          "title": "Devices",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [],
+              "entityAliasId": "809c3036-1f86-acd3-1b76-102bfad08e55"
+            }
+          ],
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "df482733-1bf5-9981-4044-8536e578ddb8"
+      },
+      "8d7e6842-e033-6e9c-20ba-3a99d05dddc4": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 15 + Math.random() * 15;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "8d7e6842-e033-6e9c-20ba-3a99d05dddc4"
+      },
+      "0c2f52c6-f38b-779d-9d65-27fd17fa21e8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 300 + Math.random() * 200;",
+                  "units": "μS/cm",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "0c2f52c6-f38b-779d-9d65-27fd17fa21e8"
+      },
+      "24c18c1a-2d26-ac27-e075-c9ade76ce6b8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return Math.random() * 7;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "24c18c1a-2d26-ac27-e075-c9ade76ce6b8"
+      },
+      "4051b3d8-4963-5e51-8012-b09118815755": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 7 + Math.random() * 2;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "4051b3d8-4963-5e51-8012-b09118815755"
+      },
+      "cd2654d6-83d3-ac7e-030f-f26f71c62444": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 1,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(33, 33, 33)",
+          "padding": "8px",
+          "settings": {
+            "cardHtml": "<div class='card'><span class='title'>Pineios</span><span>Live Monitoring</span></div>",
+            "cardCss": ".card {\n    height: 100%;\n    font-size: 1.1em;\n    font-weight: 400;\n    display: flex;\n    align-items: flex-start;\n}\n\n.title {\n    font-weight: 500;\n    margin-right: 4px;\n}"
+          },
+          "title": "Live Monitoring",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "cd2654d6-83d3-ac7e-030f-f26f71c62444"
+      },
+      "661ada88-9625-c013-6674-e360647892af": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 0.3 + Math.random() * 2;",
+                  "units": "m",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "661ada88-9625-c013-6674-e360647892af"
+      },
+      "e7804c5b-67e0-f015-d329-71c2773fa451": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 0.5 + Math.random() * 2;",
+                  "units": "m",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "e7804c5b-67e0-f015-d329-71c2773fa451"
+      },
+      "f216278a-2728-07bd-b86e-5658f2581218": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 12 + Math.random() * 15;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "f216278a-2728-07bd-b86e-5658f2581218"
+      },
+      "8f4e6dfc-2554-528b-5d11-3423e4a1d65c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 15 + Math.random() * 14;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "8f4e6dfc-2554-528b-5d11-3423e4a1d65c"
+      },
+      "c1d9fbc3-a2b6-00a7-c48a-ac049ef4f5ac": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 300 + Math.random() * 180;",
+                  "units": "μS/cm",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Conductivity",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "c1d9fbc3-a2b6-00a7-c48a-ac049ef4f5ac"
+      },
+      "5a3ac763-418a-db9c-102f-34533085a392": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 300 + Math.random() * 190;",
+                  "units": "μS/cm",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Conductivity",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "5a3ac763-418a-db9c-102f-34533085a392"
+      },
+      "bf7c8ebc-7c1d-dc46-e3f7-9d6d5843694a": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 7 + Math.random() * 1.9;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "bf7c8ebc-7c1d-dc46-e3f7-9d6d5843694a"
+      },
+      "909921c0-0c62-a19f-641d-d96c97cd9503": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 7 + Math.random() * 1.99;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "909921c0-0c62-a19f-641d-d96c97cd9503"
+      },
+      "86f2448f-9933-a8cf-5bb0-25fe2a97800c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 1,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(33, 33, 33)",
+          "padding": "8px",
+          "settings": {
+            "cardHtml": "<div class='card'><span class='title'>Spercheios</span><span>Live Monitoring</span></div>",
+            "cardCss": ".card {\n    height: 100%;\n    font-size: 1.1em;\n    font-weight: 400;\n    display: flex;\n    align-items: flex-start;\n}\n\n.title {\n    font-weight: 500;\n    margin-right: 4px;\n}"
+          },
+          "title": "Live Monitoring",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "86f2448f-9933-a8cf-5bb0-25fe2a97800c"
+      },
+      "5fee6c9e-3023-7d60-5a0f-e368c05915ee": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return Math.random() * 6;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "5fee6c9e-3023-7d60-5a0f-e368c05915ee"
+      },
+      "3a706cb3-5143-98f7-f069-a805482f484e": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return Math.random() * 6.5;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "3a706cb3-5143-98f7-f069-a805482f484e"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Overview",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "5b31c1e5-3b87-9abf-f95e-c319b827045f": {
+                "sizeX": 14,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0
+              },
+              "3685abc6-d8ae-3469-6de5-df4ad6d764d2": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 0
+              },
+              "19bc1dca-b918-0d29-d551-5b001081755d": {
+                "sizeX": 20,
+                "sizeY": 1,
+                "row": 8,
+                "col": 0
+              },
+              "df482733-1bf5-9981-4044-8536e578ddb8": {
+                "sizeX": 6,
+                "sizeY": 8,
+                "row": 0,
+                "col": 14
+              },
+              "8d7e6842-e033-6e9c-20ba-3a99d05dddc4": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 4
+              },
+              "0c2f52c6-f38b-779d-9d65-27fd17fa21e8": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 8
+              },
+              "24c18c1a-2d26-ac27-e075-c9ade76ce6b8": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 16
+              },
+              "4051b3d8-4963-5e51-8012-b09118815755": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 12
+              },
+              "cd2654d6-83d3-ac7e-030f-f26f71c62444": {
+                "sizeX": 20,
+                "sizeY": 1,
+                "row": 11,
+                "col": 0
+              },
+              "661ada88-9625-c013-6674-e360647892af": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 0
+              },
+              "e7804c5b-67e0-f015-d329-71c2773fa451": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 0
+              },
+              "f216278a-2728-07bd-b86e-5658f2581218": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 4
+              },
+              "8f4e6dfc-2554-528b-5d11-3423e4a1d65c": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 4
+              },
+              "c1d9fbc3-a2b6-00a7-c48a-ac049ef4f5ac": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 8
+              },
+              "5a3ac763-418a-db9c-102f-34533085a392": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 8
+              },
+              "bf7c8ebc-7c1d-dc46-e3f7-9d6d5843694a": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 12
+              },
+              "909921c0-0c62-a19f-641d-d96c97cd9503": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 12
+              },
+              "86f2448f-9933-a8cf-5bb0-25fe2a97800c": {
+                "sizeX": 20,
+                "sizeY": 1,
+                "row": 14,
+                "col": 0
+              },
+              "5fee6c9e-3023-7d60-5a0f-e368c05915ee": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 16
+              },
+              "3a706cb3-5143-98f7-f069-a805482f484e": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 16
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                16,
+                16
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "b3c9b442-f2d2-114f-89bd-ff37bc711333": {
+        "id": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+        "alias": "Water Nodes",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "WATER NODE",
+          "deviceNameFilter": ""
+        }
+      },
+      "809c3036-1f86-acd3-1b76-102bfad08e55": {
+        "id": "809c3036-1f86-acd3-1b76-102bfad08e55",
+        "alias": "Water Locations",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetType": "LOCATION",
+          "assetNameFilter": ""
+        }
+      }
+    },
+    "timewindow": {
+      "history": {
+        "interval": 300000,
+        "timewindowMs": 3600000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": false,
+      "titleColor": "rgba(0,0,0,0.870588)"
+    }
+  },
+  "name": "Overview v1"
+}
