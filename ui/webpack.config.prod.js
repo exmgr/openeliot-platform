@@ -59,8 +59,12 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
-                from: './src/thingsboard.ico',
-                to: 'thingsboard.ico'
+                from: './src/favicon.png',
+                to: 'favicon.png'
+            },
+            {
+                from: './src/logo.png',
+                to: 'logo.png'
             },
             {
                 from: './src/app/locale',
@@ -74,7 +78,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: '../index.html',
-            title: 'ThingsBoard',
+            title: 'Open ELIoT',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),

@@ -17,8 +17,6 @@ import $ from 'jquery';
 
 /* eslint-disable import/no-unresolved, import/default */
 
-import logoSvg from '../../svg/logo_title_white.svg';
-
 /* eslint-enable import/no-unresolved, import/default */
 
 /* eslint-disable angular/angularelement */
@@ -32,7 +30,7 @@ export default function HomeController(types, loginService, userService, deviceS
     var vm = this;
 
     vm.Fullscreen = Fullscreen;
-    vm.logoSvg = logoSvg;
+    vm.logoSvg = 'static/logo.png';
 
     if (angular.isUndefined($rootScope.searchConfig)) {
         $rootScope.searchConfig = {
