@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.thingsboard</groupId>
     <artifactId>thingsboard</artifactId>
-    <version>2.3.1</version>
+    <version>2.4.0</version>
     <packaging>pom</packaging>
 
     <name>Thingsboard</name>
@@ -47,7 +47,7 @@
         <guava.version>21.0</guava.version>
         <caffeine.version>2.6.1</caffeine.version>
         <commons-lang3.version>3.4</commons-lang3.version>
-        <commons-validator.version>1.5.0</commons-validator.version>
+        <commons-validator.version>1.6</commons-validator.version>
         <commons-io.version>2.5</commons-io.version>
         <commons-csv.version>1.4</commons-csv.version>
         <jackson.version>2.9.8</jackson.version>
@@ -75,7 +75,7 @@
         <jts.version>1.15.0</jts.version>
         <bouncycastle.version>1.56</bouncycastle.version>
         <winsw.version>2.0.1</winsw.version>
-        <hsqldb.version>2.4.0</hsqldb.version>
+        <hsqldb.version>2.5.0</hsqldb.version>
         <dbunit.version>2.5.3</dbunit.version>
         <spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
         <postgresql.driver.version>9.4.1211</postgresql.driver.version>

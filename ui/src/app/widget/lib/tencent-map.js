@@ -19,7 +19,7 @@ var tmGlobals = {
 }
 
 export default class TbTencentMap {
-	constructor($containerElement, utils, initCallback, defaultZoomLevel, dontFitMapBounds, minZoomLevel, tmApiKey, tmDefaultMapType) {
+	constructor($containerElement, utils, initCallback, defaultZoomLevel, dontFitMapBounds, disableScrollZooming, minZoomLevel, tmApiKey, tmDefaultMapType) {
 		var tbMap = this;
 		this.utils = utils;
 		this.defaultZoomLevel = defaultZoomLevel;
@@ -42,7 +42,7 @@ export default class TbTencentMap {
 
 		function initTencentMap() {
 			tbMap.map = new qq.maps.Map($containerElement[0], { // eslint-disable-line no-undef
-				scrollwheel: true,
+				scrollwheel: !disableScrollZooming,
 				mapTypeId: getTencentMapTypeId(tbMap.defaultMapType),
 				zoom: tbMap.defaultZoomLevel || 8
 			});
@@ -278,15 +278,25 @@ export default class TbTencentMap {
 			map: this.map
 		});
 		var map = this;
-		qq.maps.event.addListener(marker, 'click', function () {
-			if (settings.autocloseTooltip) {
-				map.tooltips.forEach((tooltip) => {
-					tooltip.popup.close();
-				});
-			}
-			popup.open();
-			popup.setPosition(marker);
-		});
+		if (settings.displayTooltipAction == 'hover') {
+			qq.maps.event.addListener(marker, 'mouseover', function () {
+				popup.open();
+				popup.setPosition(marker);
+			});
+			qq.maps.event.addListener(marker, 'mouseout', function () {
+				popup.close();
+			});
+		} else {
+			qq.maps.event.addListener(marker, 'click', function () {
+				if (settings.autocloseTooltip) {
+					map.tooltips.forEach((tooltip) => {
+						tooltip.popup.close();
+					});
+				}
+				popup.open();
+				popup.setPosition(marker);
+			});
+		}
 		map.tooltips.push({
 			markerArgs: markerArgs,
 			popup: popup,

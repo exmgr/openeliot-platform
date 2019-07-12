@@ -276,6 +276,16 @@ export default angular.module('thingsboard.types', [])
                     name: 'alias.filter-type-entity-view-search-query'
                 }
             },
+            direction: {
+                column: {
+                    value: "column",
+                    name: "direction.column"
+                },
+                row: {
+                    value: "row",
+                    name: "direction.row"
+                }
+            },
             position: {
                 top: {
                     value: "top",
@@ -339,6 +349,40 @@ export default angular.module('thingsboard.types', [])
                 rulechain: "RULE_CHAIN",
                 rulenode: "RULE_NODE",
                 entityView: "ENTITY_VIEW"
+            },
+            importEntityColumnType: {
+                name: {
+                    name: 'import.column-type.name',
+                    value: 'name'
+                },
+                type: {
+                    name: 'import.column-type.type',
+                    value: 'type'
+                },
+                clientAttribute: {
+                    name: 'import.column-type.client-attribute',
+                    value: 'CLIENT_ATTRIBUTE'
+                },
+                sharedAttribute: {
+                    name: 'import.column-type.shared-attribute',
+                    value: 'SHARED_ATTRIBUTE'
+                },
+                serverAttribute: {
+                    name: 'import.column-type.server-attribute',
+                    value: 'SERVER_ATTRIBUTE'
+                },
+                timeseries: {
+                    name: 'import.column-type.timeseries',
+                    value: 'TIMESERIES'
+                },
+                entityField: {
+                    name: 'import.column-type.entity-field',
+                    value: 'ENTITY_FIELD'
+                },
+                accessToken: {
+                    name: 'import.column-type.access-token',
+                    value: 'ACCESS_TOKEN'
+                }
             },
             aliasEntityType: {
                 current_customer: "CURRENT_CUSTOMER"

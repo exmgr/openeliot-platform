@@ -16,6 +16,7 @@
 package org.thingsboard.server.service.install;
 
 import com.datastax.driver.core.KeyspaceMetadata;
+import com.datastax.driver.core.exceptions.InvalidQueryException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -256,6 +257,15 @@ public class CassandraDatabaseUpgradeService implements DatabaseUpgradeService {
             case "2.1.3":
                 break;
             case "2.3.0":
+                break;
+            case "2.3.1":
+                log.info("Updating schema ...");
+                String updateDeviceTableStmt = "alter table device add label text";
+                try {
+                    cluster.getSession().execute(updateDeviceTableStmt);
+                    Thread.sleep(2500);
+                } catch (InvalidQueryException e) {}
+                log.info("Schema updated.");
                 break;
             default:
                 throw new RuntimeException("Unable to upgrade Cassandra database, unsupported fromVersion: " + fromVersion);

@@ -20,7 +20,6 @@ package org.thingsboard.server.common.data;
  */
 public class DataConstants {
 
-    public static final String SYSTEM = "SYSTEM";
     public static final String TENANT = "TENANT";
     public static final String CUSTOMER = "CUSTOMER";
     public static final String DEVICE = "DEVICE";
@@ -38,9 +37,7 @@ public class DataConstants {
     public static final String LC_EVENT = "LC_EVENT";
     public static final String STATS = "STATS";
     public static final String DEBUG_RULE_NODE = "DEBUG_RULE_NODE";
-
-    public static final String ONEWAY = "ONEWAY";
-    public static final String TWOWAY = "TWOWAY";
+    public static final String DEBUG_RULE_CHAIN = "DEBUG_RULE_CHAIN";
 
     public static final String IN = "IN";
     public static final String OUT = "OUT";
@@ -61,5 +58,9 @@ public class DataConstants {
     public static final String ALARM_CLEAR = "ALARM_CLEAR";
 
     public static final String RPC_CALL_FROM_SERVER_TO_DEVICE = "RPC_CALL_FROM_SERVER_TO_DEVICE";
+
+    public static final String DEFAULT_SECRET_KEY = "";
+    public static final String SECRET_KEY_FIELD_NAME = "secretKey";
+    public static final String DURATION_MS_FIELD_NAME = "durationMs";
 
 }
