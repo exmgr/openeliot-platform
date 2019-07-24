@@ -1,0 +1,5765 @@
+{
+  "title": "Overview v2",
+  "configuration": {
+    "widgets": {
+      "5b31c1e5-3b87-9abf-f95e-c319b827045f": {
+        "isSystemType": true,
+        "bundleAlias": "maps_v2",
+        "typeAlias": "openstreetmap",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 14,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "latitude",
+                  "type": "attribute",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5699777074047059
+                },
+                {
+                  "name": "longitude",
+                  "type": "attribute",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.13157343908544994
+                }
+              ],
+              "entityAliasId": "809c3036-1f86-acd3-1b76-102bfad08e55"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "fitMapBounds": true,
+            "latKeyName": "latitude",
+            "lngKeyName": "longitude",
+            "showLabel": true,
+            "label": "${entityName}",
+            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See advanced settings for details</small>",
+            "markerImageSize": 36,
+            "useColorFunction": false,
+            "markerImages": [],
+            "useMarkerImageFunction": false,
+            "color": "#ff1744",
+            "mapProvider": "CartoDB.Positron",
+            "showTooltip": true,
+            "autocloseTooltip": true,
+            "tooltipFunction": "var deviceType = dsData[dsIndex]['deviceType'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<b>${entityName}</b><br/><b>Energy:</b> ${energy:2} kWt<br/>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<b>${entityName}</b><br/><b>Temperature:</b> ${temperature:2} °C<br/>';\r\n    }\r\n}",
+            "customProviderTileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "showTooltipAction": "click",
+            "polygonKeyName": "coordinates",
+            "polygonOpacity": 0.5,
+            "polygonStrokeOpacity": 1,
+            "polygonStrokeWeight": 1,
+            "labelFunction": "var deviceType = dsData[dsIndex]['deviceType'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<span style=\"color:orange;\">${entityName}, ${energy:2} kWt</span>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<span style=\"color:blue;\">${entityName}, ${temperature:2} °C</span>';\r\n    }\r\n}"
+          },
+          "title": "Deployments",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {
+            "markerClick": [
+              {
+                "id": "e6571bf9-6c27-a481-b237-3b3372f10549",
+                "name": "location_selected",
+                "icon": "more_horiz",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "location_detail",
+                "setEntityId": true
+              }
+            ]
+          },
+          "displayTimewindow": true
+        },
+        "id": "5b31c1e5-3b87-9abf-f95e-c319b827045f"
+      },
+      "3685abc6-d8ae-3469-6de5-df4ad6d764d2": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 0.5 + Math.random() * 2.5;",
+                  "units": "m",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "3685abc6-d8ae-3469-6de5-df4ad6d764d2"
+      },
+      "19bc1dca-b918-0d29-d551-5b001081755d": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 1,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(33, 33, 33)",
+          "padding": "8px",
+          "settings": {
+            "cardHtml": "<div class='card'><span class='title'>Pikrodafni</span><span>Live Monitoring</span></div>",
+            "cardCss": ".card {\n    height: 100%;\n    font-size: 1.1em;\n    font-weight: 400;\n    display: flex;\n    align-items: flex-start;\n}\n\n.title {\n    font-weight: 500;\n    margin-right: 4px;\n}"
+          },
+          "title": "Live Monitoring",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "19bc1dca-b918-0d29-d551-5b001081755d"
+      },
+      "df482733-1bf5-9981-4044-8536e578ddb8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_hierarchy",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 8,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "nodeRelationQueryFunction": "/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: types.entitySearchDirection.from,\n        relationTypeGroup: \"COMMON\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
+            "nodeHasChildrenFunction": "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
+            "nodeIconFunction": "/** \n\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Where:\n    - 'materialIcon' - name of the material icon to be used from the Material Icons Library (https://material.io/tools/icons);\n    - 'iconUrl' - url of the external image to be used as node icon.\n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('Test')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n \n**/\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === \"ASSET\") return {materialIcon: 'place'};\nreturn 'default';",
+            "nodeDisabledFunction": "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
+            "nodesSortFunction": "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/",
+            "nodeOpenedFunction": "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n ",
+            "nodeTextFunction": "var entity = nodeCtx.entity;\nif (entity.id.entityType === \"ASSET\") return entity.name;\nvar nodeName = `${entity.name}`;\nvar nodeLabel = `${entity.label}`;\nreturn nodeLabel !== null ? nodeLabel : nodeName;"
+          },
+          "title": "Devices",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [],
+              "entityAliasId": "809c3036-1f86-acd3-1b76-102bfad08e55"
+            }
+          ],
+          "widgetStyle": {},
+          "actions": {
+            "nodeSelected": [
+              {
+                "id": "e9801cfa-559b-42b5-693f-3f21b7976f3f",
+                "name": "node-selected",
+                "icon": "more_horiz",
+                "type": "custom",
+                "customFunction": "function openDashboardState(stateId) {\n    var params = { \n        entityId: entityId,\n        entityName: entityName,\n        // stateEntityParamName: 'selected_site'\n    };\n    widgetContext.stateController.openState(stateId, params, false);\n}\n\nif (entityId.entityType == \"ASSET\") {\n    return openDashboardState(\"location_detail\");\n}\n\nvar entityType = additionalParams.nodeCtx.entity.type;\n\nif (entityType === 'WATER NODE') {\n    return openDashboardState(\"water_node_detail\");\n}\n\nif (entityType === 'WEATHER STATION') {\n    return openDashboardState(\"weather_station_detail\");\n}\n\nif (entityType === 'DATA LOGGER') {\n    return openDashboardState(\"data_logger_detail\");\n}\n"
+              }
+            ]
+          },
+          "displayTimewindow": true
+        },
+        "id": "df482733-1bf5-9981-4044-8536e578ddb8"
+      },
+      "8d7e6842-e033-6e9c-20ba-3a99d05dddc4": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 15 + Math.random() * 15;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "8d7e6842-e033-6e9c-20ba-3a99d05dddc4"
+      },
+      "0c2f52c6-f38b-779d-9d65-27fd17fa21e8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 300 + Math.random() * 200;",
+                  "units": "μS/m",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "0c2f52c6-f38b-779d-9d65-27fd17fa21e8"
+      },
+      "24c18c1a-2d26-ac27-e075-c9ade76ce6b8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return Math.random() * 7;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "24c18c1a-2d26-ac27-e075-c9ade76ce6b8"
+      },
+      "4051b3d8-4963-5e51-8012-b09118815755": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 7 + Math.random() * 2;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#3f51b5",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "4051b3d8-4963-5e51-8012-b09118815755"
+      },
+      "cd2654d6-83d3-ac7e-030f-f26f71c62444": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 1,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(33, 33, 33)",
+          "padding": "8px",
+          "settings": {
+            "cardHtml": "<div class='card'><span class='title'>Pineios</span><span>Live Monitoring</span></div>",
+            "cardCss": ".card {\n    height: 100%;\n    font-size: 1.1em;\n    font-weight: 400;\n    display: flex;\n    align-items: flex-start;\n}\n\n.title {\n    font-weight: 500;\n    margin-right: 4px;\n}"
+          },
+          "title": "Live Monitoring",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "cd2654d6-83d3-ac7e-030f-f26f71c62444"
+      },
+      "661ada88-9625-c013-6674-e360647892af": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 0.3 + Math.random() * 2;",
+                  "units": "m",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "661ada88-9625-c013-6674-e360647892af"
+      },
+      "e7804c5b-67e0-f015-d329-71c2773fa451": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 0.5 + Math.random() * 2;",
+                  "units": "m",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "e7804c5b-67e0-f015-d329-71c2773fa451"
+      },
+      "f216278a-2728-07bd-b86e-5658f2581218": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 12 + Math.random() * 15;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "f216278a-2728-07bd-b86e-5658f2581218"
+      },
+      "8f4e6dfc-2554-528b-5d11-3423e4a1d65c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 15 + Math.random() * 14;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "8f4e6dfc-2554-528b-5d11-3423e4a1d65c"
+      },
+      "c1d9fbc3-a2b6-00a7-c48a-ac049ef4f5ac": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 300 + Math.random() * 180;",
+                  "units": "μS/m",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "c1d9fbc3-a2b6-00a7-c48a-ac049ef4f5ac"
+      },
+      "5a3ac763-418a-db9c-102f-34533085a392": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 300 + Math.random() * 190;",
+                  "units": "μS/m",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "5a3ac763-418a-db9c-102f-34533085a392"
+      },
+      "bf7c8ebc-7c1d-dc46-e3f7-9d6d5843694a": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 7 + Math.random() * 1.9;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "bf7c8ebc-7c1d-dc46-e3f7-9d6d5843694a"
+      },
+      "909921c0-0c62-a19f-641d-d96c97cd9503": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return 7 + Math.random() * 1.99;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "909921c0-0c62-a19f-641d-d96c97cd9503"
+      },
+      "86f2448f-9933-a8cf-5bb0-25fe2a97800c": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "html_card",
+        "type": "static",
+        "title": "New widget",
+        "sizeX": 20,
+        "sizeY": 1,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(33, 33, 33)",
+          "padding": "8px",
+          "settings": {
+            "cardHtml": "<div class='card'><span class='title'>Spercheios</span><span>Live Monitoring</span></div>",
+            "cardCss": ".card {\n    height: 100%;\n    font-size: 1.1em;\n    font-weight: 400;\n    display: flex;\n    align-items: flex-start;\n}\n\n.title {\n    font-weight: 500;\n    margin-right: 4px;\n}"
+          },
+          "title": "Live Monitoring",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "86f2448f-9933-a8cf-5bb0-25fe2a97800c"
+      },
+      "5fee6c9e-3023-7d60-5a0f-e368c05915ee": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return Math.random() * 6;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0097a7",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "5fee6c9e-3023-7d60-5a0f-e368c05915ee"
+      },
+      "3a706cb3-5143-98f7-f069-a805482f484e": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.989126974964891,
+                  "funcBody": "return Math.random() * 6.5;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#00796b",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "3a706cb3-5143-98f7-f069-a805482f484e"
+      },
+      "70d93a77-802b-4bed-663b-f3dc76cc5dd4": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 0.5 + Math.random() * 2.5;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 10,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Water Level (m)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "70d93a77-802b-4bed-663b-f3dc76cc5dd4"
+      },
+      "5f51b701-16cc-00b7-b8eb-effca0d1ec3d": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 15 + Math.random() * 10;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 50,
+            "minValue": -10,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Temperature (°C)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "5f51b701-16cc-00b7-b8eb-effca0d1ec3d"
+      },
+      "7d684a57-6392-9270-9e67-7d9d155af077": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 300 + Math.random() * 200;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 2500,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Conductivity (μS/cm)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "7d684a57-6392-9270-9e67-7d9d155af077"
+      },
+      "3b9a2083-90cd-48b6-2be8-8b19fc4d29a4": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 7 + Math.random() * 2;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 14,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "pH",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "3b9a2083-90cd-48b6-2be8-8b19fc4d29a4"
+      },
+      "ca42ee04-a3a0-9710-7707-4e192a8152c8": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return Math.random() * 7;",
+                  "units": "",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 20,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Dissolved O2 (mg/L)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "ca42ee04-a3a0-9710-7707-4e192a8152c8"
+      },
+      "75dbf3ac-d13f-e615-7b33-705a8fc6efbb": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 0.5 + Math.random() * 2.5;",
+                  "units": "m",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Water Level",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "75dbf3ac-d13f-e615-7b33-705a8fc6efbb"
+      },
+      "cebf0908-d917-54cd-caeb-d34623a606f1": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 15 + Math.random() * 10;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Water Temperature",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "cebf0908-d917-54cd-caeb-d34623a606f1"
+      },
+      "814040c8-7616-91b9-793c-1775731abf9d": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 300 + Math.random() * 200;",
+                  "units": "μS/cm",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 0
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Conductivity",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "814040c8-7616-91b9-793c-1775731abf9d"
+      },
+      "96710b5e-4204-0985-beac-3ac3016caa03": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 7 + Math.random() * 2;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "pH",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": 1,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "96710b5e-4204-0985-beac-3ac3016caa03"
+      },
+      "37d57414-8b31-dfd5-be37-07581fc22a79": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return Math.random() * 7;",
+                  "units": "mg/L",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Dissolved Oxygen",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "37d57414-8b31-dfd5-be37-07581fc22a79"
+      },
+      "74d837ec-ba4d-f739-039b-54163da7425d": {
+        "isSystemType": true,
+        "bundleAlias": "maps_v2",
+        "typeAlias": "openstreetmap",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [
+                {
+                  "name": "latitude",
+                  "type": "attribute",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5699777074047059
+                },
+                {
+                  "name": "longitude",
+                  "type": "attribute",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.13157343908544994
+                }
+              ],
+              "entityAliasId": "6cb610f1-7783-016a-d6db-740654fa280c"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "fitMapBounds": true,
+            "latKeyName": "latitude",
+            "lngKeyName": "longitude",
+            "showLabel": true,
+            "label": "${entityName}",
+            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See advanced settings for details</small>",
+            "markerImageSize": 36,
+            "useColorFunction": false,
+            "markerImages": [],
+            "useMarkerImageFunction": false,
+            "color": "#ff1744",
+            "mapProvider": "CartoDB.Positron",
+            "showTooltip": false,
+            "autocloseTooltip": false,
+            "tooltipFunction": "var deviceType = dsData[dsIndex]['deviceType'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<b>${entityName}</b><br/><b>Energy:</b> ${energy:2} kWt<br/>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<b>${entityName}</b><br/><b>Temperature:</b> ${temperature:2} °C<br/>';\r\n    }\r\n}",
+            "customProviderTileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "showTooltipAction": "click",
+            "polygonKeyName": "coordinates",
+            "polygonOpacity": 0.5,
+            "polygonStrokeOpacity": 1,
+            "polygonStrokeWeight": 1,
+            "labelFunction": "var deviceType = dsData[dsIndex]['deviceType'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<span style=\"color:orange;\">${entityName}, ${energy:2} kWt</span>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<span style=\"color:blue;\">${entityName}, ${temperature:2} °C</span>';\r\n    }\r\n}",
+            "disableScrollZooming": true,
+            "useCustomProvider": false
+          },
+          "title": "Location",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "id": "74d837ec-ba4d-f739-039b-54163da7425d"
+      },
+      "5773f3ec-0e60-0050-5c75-78f28ec1c2c9": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Water Level",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 0.5 + Math.random() * 2.5;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Water Level"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 10,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Water Level (m)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "5773f3ec-0e60-0050-5c75-78f28ec1c2c9"
+      },
+      "ad3dcf9f-bcef-7a6c-7e03-c3b2bbbc657a": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 15 + Math.random() * 10;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 50,
+            "minValue": -10,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Temperature (°C)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "ad3dcf9f-bcef-7a6c-7e03-c3b2bbbc657a"
+      },
+      "ad954cd9-c9af-cb6a-b41a-51b09630bf93": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Conductivity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 300 + Math.random() * 200;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Conductivity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 2500,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Conductivity (μS/cm)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "ad954cd9-c9af-cb6a-b41a-51b09630bf93"
+      },
+      "da92628c-6f6f-b1de-b3c6-00bac18c5f96": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "pH",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 7 + Math.random() * 2;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "pH"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 14,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "pH",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "da92628c-6f6f-b1de-b3c6-00bac18c5f96"
+      },
+      "b1f8e83d-c863-e6d9-6048-139cdc2a78cc": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Dissolved Oxygen",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return Math.random() * 7;",
+                  "units": "",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Dissolved Oxygen"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 20,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Dissolved O2 (mg/L)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "b1f8e83d-c863-e6d9-6048-139cdc2a78cc"
+      },
+      "af41f3f8-cf8b-da75-b368-f3f06a34ae1b": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Battery",
+                  "color": "#fbc02d",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 70 + Math.random() * 30;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Battery"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 100,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Battery (%)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "af41f3f8-cf8b-da75-b368-f3f06a34ae1b"
+      },
+      "cbdfeb7c-702d-7e37-c2e0-0ff97dfc1875": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Battery Charge",
+                  "color": "#fbc02d",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 70 + Math.random() * 30;",
+                  "units": "%",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Battery"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Battery",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "cbdfeb7c-702d-7e37-c2e0-0ff97dfc1875"
+      },
+      "dcffb8b8-6978-f92b-5d87-1bd75ec697ac": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "RSSI",
+                  "color": "#fbc02d",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return -80 + Math.random() * 50;",
+                  "units": "dB",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "RSSI"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Signal",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "dcffb8b8-6978-f92b-5d87-1bd75ec697ac"
+      },
+      "bfb0550c-8ca9-3ed8-fcde-bfac90d8d988": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Humidity",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 50 + Math.random() * 35;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Humidity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 100,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Humidity (%)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "bfb0550c-8ca9-3ed8-fcde-bfac90d8d988"
+      },
+      "eb1242dd-47c9-0f97-6de8-d22429a7bd24": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 15 + Math.random() * 10;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 50,
+            "minValue": -10,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Temperature (°C)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "eb1242dd-47c9-0f97-6de8-d22429a7bd24"
+      },
+      "23eb8c42-af5a-b76e-a28e-dd995eecf98f": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Wind Speed",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return Math.random() * 5;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Wind Speed"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 40,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Wind Speed (m/s)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "23eb8c42-af5a-b76e-a28e-dd995eecf98f"
+      },
+      "9f943f76-e1c9-e2c5-a256-fd0afcaf3751": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Precipitation",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return Math.random() * 0.5;",
+                  "units": "",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Precipitation"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 3,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Hourly Precipitation (mm)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "9f943f76-e1c9-e2c5-a256-fd0afcaf3751"
+      },
+      "d6b708ef-dd59-1596-33bf-e8ceb9d4d2c9": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Battery",
+                  "color": "#fbc02d",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 70 + Math.random() * 30;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Battery"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 100,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Battery (%)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "d6b708ef-dd59-1596-33bf-e8ceb9d4d2c9"
+      },
+      "89af1eb1-32d5-b8e8-2fa5-26339fd129e2": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Wind Speed",
+                  "color": "#e91e63",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return Math.random() * 4.9;",
+                  "units": "m/s",
+                  "decimals": 1
+                },
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Wind Gust",
+                  "color": "#880e4f",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.1918181872758391,
+                  "funcBody": "return 5 + Math.random() * 30;",
+                  "units": "m/s",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Wind Speed"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Wind Speed",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "89af1eb1-32d5-b8e8-2fa5-26339fd129e2"
+      },
+      "a99b84b7-89bd-2da5-4473-de383f9f356f": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Battery Charge",
+                  "color": "#fbc02d",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 70 + Math.random() * 30;",
+                  "units": "%",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Battery"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Battery",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "a99b84b7-89bd-2da5-4473-de383f9f356f"
+      },
+      "2222e674-f72a-dc4d-e822-9ebcd823b2c8": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "RSSI",
+                  "color": "#fbc02d",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return -80 + Math.random() * 50;",
+                  "units": "dB",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "RSSI"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Signal",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "2222e674-f72a-dc4d-e822-9ebcd823b2c8"
+      },
+      "59b3729b-31cf-1c42-62cc-177787a2c108": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#e91e63",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 15 + Math.random() * 10;",
+                  "units": "°C",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Temperature",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "59b3729b-31cf-1c42-62cc-177787a2c108"
+      },
+      "419115b5-5244-52b7-0425-9ccf7a2904bd": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Precipitation",
+                  "color": "#e91e63",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return Math.random();",
+                  "units": "mm",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Precipitation"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 0
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Hourly Precipitation",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "419115b5-5244-52b7-0425-9ccf7a2904bd"
+      },
+      "fd6a7f84-c972-a212-4159-318397160d0b": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Humidity",
+                  "color": "#e91e63",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 50 + Math.random() * 35;",
+                  "units": "%",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Humidity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Humidity",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": 1,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "fd6a7f84-c972-a212-4159-318397160d0b"
+      },
+      "a593b4de-cca4-474b-86a6-d97689d18e16": {
+        "isSystemType": true,
+        "bundleAlias": "analogue_gauges",
+        "typeAlias": "analogue_compass",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Wind Direction",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8855274013825443,
+                  "funcBody": "return Math.random() * 359;",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Wind Direction"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "minorTicks": 12,
+            "needleCircleSize": 15,
+            "showBorder": true,
+            "borderOuterWidth": 4,
+            "colorPlate": "#ffffff",
+            "colorMajorTicks": "#757575",
+            "colorMinorTicks": "#ddd",
+            "colorNeedle": "#e91e63",
+            "colorNeedleCircle": "#e8e8e8",
+            "colorBorder": "#ccc",
+            "majorTickFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "color": "#616161",
+              "size": 20
+            },
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "cycle",
+            "animationTarget": "needle",
+            "majorTicks": [
+              "N",
+              "NE",
+              "E",
+              "SE",
+              "S",
+              "SW",
+              "W",
+              "NW"
+            ]
+          },
+          "title": "Wind Direction",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": "",
+          "displayTimewindow": true
+        },
+        "id": "a593b4de-cca4-474b-86a6-d97689d18e16"
+      },
+      "c7c6aba2-6505-2ed5-dbd6-a9699c34b39c": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 12,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Pressure",
+                  "color": "#e91e63",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 1000 + Math.random() * 15;",
+                  "units": "hPa",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Pressure"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 0
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Pressure",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "c7c6aba2-6505-2ed5-dbd6-a9699c34b39c"
+      },
+      "965acc92-df42-581d-ca2d-2a2ec5e8df22": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Temperature",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 15 + Math.random() * 10;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Temperature"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 50,
+            "minValue": -10,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Temperature (°C)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "965acc92-df42-581d-ca2d-2a2ec5e8df22"
+      },
+      "1c509942-6237-fe0b-fb09-bcdf47f77e65": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Humidity",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 50 + Math.random() * 35;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Humidity"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 100,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Humidity (%)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "1c509942-6237-fe0b-fb09-bcdf47f77e65"
+      },
+      "69a3ea15-bc31-80f3-c204-54ca7ac56c66": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Wind Speed",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return Math.random() * 5;",
+                  "units": "",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Wind Speed"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 40,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Wind Speed (m/s)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "69a3ea15-bc31-80f3-c204-54ca7ac56c66"
+      },
+      "43c99eca-e183-66e5-a4f2-7f9d484732bf": {
+        "isSystemType": true,
+        "bundleAlias": "analogue_gauges",
+        "typeAlias": "analogue_compass",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Wind Direction",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8855274013825443,
+                  "funcBody": "return Math.random() * 359;",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Wind Direction"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "minorTicks": 12,
+            "needleCircleSize": 15,
+            "showBorder": true,
+            "borderOuterWidth": 4,
+            "colorPlate": "#ffffff",
+            "colorMajorTicks": "#757575",
+            "colorMinorTicks": "#ddd",
+            "colorNeedle": "#e91e63",
+            "colorNeedleCircle": "#e8e8e8",
+            "colorBorder": "#ccc",
+            "majorTickFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "color": "#616161",
+              "size": 20
+            },
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "cycle",
+            "animationTarget": "needle",
+            "majorTicks": [
+              "N",
+              "NE",
+              "E",
+              "SE",
+              "S",
+              "SW",
+              "W",
+              "NW"
+            ]
+          },
+          "title": "Wind Direction",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": "",
+          "displayTimewindow": true
+        },
+        "id": "43c99eca-e183-66e5-a4f2-7f9d484732bf"
+      },
+      "3e669b4f-3833-a829-759d-dae56d9e8038": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Precipitation",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return Math.random() * 0.5;",
+                  "units": "",
+                  "decimals": 2
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Precipitation"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 3,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Hourly Precipitation (mm)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "3e669b4f-3833-a829-759d-dae56d9e8038"
+      },
+      "6ccabeb3-044e-3e98-1e46-0f3ada000894": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "entities_hierarchy",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "nodeRelationQueryFunction": "/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: types.entitySearchDirection.from,\n        relationTypeGroup: \"COMMON\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
+            "nodeHasChildrenFunction": "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
+            "nodeIconFunction": "/** \n\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Where:\n    - 'materialIcon' - name of the material icon to be used from the Material Icons Library (https://material.io/tools/icons);\n    - 'iconUrl' - url of the external image to be used as node icon.\n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('Test')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n \n**/\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === \"ASSET\") return {materialIcon: 'place'};\nreturn 'default';",
+            "nodeDisabledFunction": "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
+            "nodesSortFunction": "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/",
+            "nodeOpenedFunction": "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n ",
+            "nodeTextFunction": "var entity = nodeCtx.entity;\nif (entity.id.entityType === \"ASSET\") return entity.name;\nvar nodeName = `${entity.name}`;\nvar nodeLabel = `${entity.label}`;\nreturn nodeLabel !== null ? nodeLabel : nodeName;"
+          },
+          "title": "Devices",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "dataKeys": [],
+              "entityAliasId": "6cb610f1-7783-016a-d6db-740654fa280c"
+            }
+          ],
+          "widgetStyle": {},
+          "actions": {
+            "nodeSelected": [
+              {
+                "id": "e9801cfa-559b-42b5-693f-3f21b7976f3f",
+                "name": "node-selected",
+                "icon": "more_horiz",
+                "type": "custom",
+                "customFunction": "function openDashboardState(stateId) {\n    var params = { \n        entityId: entityId,\n        entityName: entityName,\n        // stateEntityParamName: 'selected_site'\n    };\n    widgetContext.stateController.openState(stateId, params, false);\n}\n\nif (entityId.entityType == \"ASSET\") {\n    return openDashboardState(\"location_detail\");\n}\n\nvar entityType = additionalParams.nodeCtx.entity.type;\n\nif (entityType === 'WATER NODE') {\n    return openDashboardState(\"water_node_detail\");\n}\n\nif (entityType === 'WEATHER STATION') {\n    return openDashboardState(\"weather_station_detail\");\n}\n\nif (entityType === 'DATA LOGGER') {\n    return openDashboardState(\"data_logger_detail\");\n}\n"
+              }
+            ]
+          },
+          "displayTimewindow": true
+        },
+        "id": "6ccabeb3-044e-3e98-1e46-0f3ada000894"
+      },
+      "a88b9e11-4e8c-5b02-28b9-f62fa750382b": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Battery",
+                  "color": "#fbc02d",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return 70 + Math.random() * 30;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Battery"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 100,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Battery (%)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "a88b9e11-4e8c-5b02-28b9-f62fa750382b"
+      },
+      "461de77a-7f2d-bd04-0591-b949284b1a5b": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "RSSI",
+                  "color": "#fbc02d",
+                  "settings": {},
+                  "_hash": 0.9669017826860666,
+                  "funcBody": "return -80 + Math.random() * 50;",
+                  "units": "",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "RSSI"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "maxValue": 0,
+            "minValue": -120,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 36,
+              "color": "#666666"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#666666"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#eeeeee",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "showTimestamp": false,
+            "showUnitTitle": false
+          },
+          "title": "Signal (dB)",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "margin": "",
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "units": ""
+        },
+        "id": "461de77a-7f2d-bd04-0591-b949284b1a5b"
+      },
+      "745fbd02-379d-f887-3a77-d6b9316a7e2d": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "Battery Charge",
+                  "color": "#fbc02d",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return 70 + Math.random() * 30;",
+                  "units": "%",
+                  "decimals": 0
+                }
+              ],
+              "entityAliasId": null,
+              "name": "Battery"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Battery",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "745fbd02-379d-f887-3a77-d6b9316a7e2d"
+      },
+      "c2f28e0b-418f-9302-3171-dec0622a23e4": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "function",
+              "dataKeys": [
+                {
+                  "name": "f(x)",
+                  "type": "function",
+                  "label": "RSSI",
+                  "color": "#fbc02d",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left"
+                  },
+                  "_hash": 0.004639822187779474,
+                  "funcBody": "return -80 + Math.random() * 50;",
+                  "units": "dB",
+                  "decimals": 1
+                }
+              ],
+              "entityAliasId": null,
+              "name": "RSSI"
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454",
+              "tickDecimals": 1
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Signal",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "mobileHeight": null,
+          "widgetStyle": {},
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": false,
+          "showLegend": true,
+          "actions": {},
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "showMin": true,
+            "showMax": true,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "id": "c2f28e0b-418f-9302-3171-dec0622a23e4"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Overview",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "5b31c1e5-3b87-9abf-f95e-c319b827045f": {
+                "sizeX": 14,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0
+              },
+              "3685abc6-d8ae-3469-6de5-df4ad6d764d2": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 0
+              },
+              "19bc1dca-b918-0d29-d551-5b001081755d": {
+                "sizeX": 20,
+                "sizeY": 1,
+                "row": 8,
+                "col": 0
+              },
+              "df482733-1bf5-9981-4044-8536e578ddb8": {
+                "sizeX": 6,
+                "sizeY": 8,
+                "row": 0,
+                "col": 14
+              },
+              "8d7e6842-e033-6e9c-20ba-3a99d05dddc4": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 4
+              },
+              "0c2f52c6-f38b-779d-9d65-27fd17fa21e8": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 8
+              },
+              "24c18c1a-2d26-ac27-e075-c9ade76ce6b8": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 16
+              },
+              "4051b3d8-4963-5e51-8012-b09118815755": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 9,
+                "col": 12
+              },
+              "cd2654d6-83d3-ac7e-030f-f26f71c62444": {
+                "sizeX": 20,
+                "sizeY": 1,
+                "row": 11,
+                "col": 0
+              },
+              "661ada88-9625-c013-6674-e360647892af": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 0
+              },
+              "e7804c5b-67e0-f015-d329-71c2773fa451": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 0
+              },
+              "f216278a-2728-07bd-b86e-5658f2581218": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 4
+              },
+              "8f4e6dfc-2554-528b-5d11-3423e4a1d65c": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 4
+              },
+              "c1d9fbc3-a2b6-00a7-c48a-ac049ef4f5ac": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 8
+              },
+              "5a3ac763-418a-db9c-102f-34533085a392": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 8
+              },
+              "bf7c8ebc-7c1d-dc46-e3f7-9d6d5843694a": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 12
+              },
+              "909921c0-0c62-a19f-641d-d96c97cd9503": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 12
+              },
+              "86f2448f-9933-a8cf-5bb0-25fe2a97800c": {
+                "sizeX": 20,
+                "sizeY": 1,
+                "row": 14,
+                "col": 0
+              },
+              "5fee6c9e-3023-7d60-5a0f-e368c05915ee": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 12,
+                "col": 16
+              },
+              "3a706cb3-5143-98f7-f069-a805482f484e": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 15,
+                "col": 16
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                16,
+                16
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "water_node_detail": {
+        "name": "${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "70d93a77-802b-4bed-663b-f3dc76cc5dd4": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "5f51b701-16cc-00b7-b8eb-effca0d1ec3d": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 4
+              },
+              "7d684a57-6392-9270-9e67-7d9d155af077": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 8
+              },
+              "3b9a2083-90cd-48b6-2be8-8b19fc4d29a4": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 12
+              },
+              "ca42ee04-a3a0-9710-7707-4e192a8152c8": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 16
+              },
+              "75dbf3ac-d13f-e615-7b33-705a8fc6efbb": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 0
+              },
+              "cebf0908-d917-54cd-caeb-d34623a606f1": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 12
+              },
+              "814040c8-7616-91b9-793c-1775731abf9d": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 8,
+                "col": 0
+              },
+              "96710b5e-4204-0985-beac-3ac3016caa03": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 8,
+                "col": 12
+              },
+              "37d57414-8b31-dfd5-be37-07581fc22a79": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 12,
+                "col": 0
+              },
+              "af41f3f8-cf8b-da75-b368-f3f06a34ae1b": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 20
+              },
+              "cbdfeb7c-702d-7e37-c2e0-0ff97dfc1875": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 12,
+                "col": 12
+              },
+              "dcffb8b8-6978-f92b-5d87-1bd75ec697ac": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 12,
+                "col": 18
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                16,
+                16
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "location_detail": {
+        "name": "${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "74d837ec-ba4d-f739-039b-54163da7425d": {
+                "sizeX": 12,
+                "sizeY": 5,
+                "row": 0,
+                "col": 0
+              },
+              "5773f3ec-0e60-0050-5c75-78f28ec1c2c9": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 5,
+                "col": 0
+              },
+              "ad3dcf9f-bcef-7a6c-7e03-c3b2bbbc657a": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 5,
+                "col": 4
+              },
+              "ad954cd9-c9af-cb6a-b41a-51b09630bf93": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 5,
+                "col": 8
+              },
+              "da92628c-6f6f-b1de-b3c6-00bac18c5f96": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 5,
+                "col": 12
+              },
+              "b1f8e83d-c863-e6d9-6048-139cdc2a78cc": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 5,
+                "col": 16
+              },
+              "965acc92-df42-581d-ca2d-2a2ec5e8df22": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 9,
+                "col": 0
+              },
+              "1c509942-6237-fe0b-fb09-bcdf47f77e65": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 9,
+                "col": 4
+              },
+              "69a3ea15-bc31-80f3-c204-54ca7ac56c66": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 9,
+                "col": 8
+              },
+              "43c99eca-e183-66e5-a4f2-7f9d484732bf": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 9,
+                "col": 12
+              },
+              "3e669b4f-3833-a829-759d-dae56d9e8038": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 9,
+                "col": 16
+              },
+              "6ccabeb3-044e-3e98-1e46-0f3ada000894": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "row": 0,
+                "col": 12
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                16,
+                16
+              ],
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "weather_station_detail": {
+        "name": "${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "bfb0550c-8ca9-3ed8-fcde-bfac90d8d988": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 4
+              },
+              "eb1242dd-47c9-0f97-6de8-d22429a7bd24": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "23eb8c42-af5a-b76e-a28e-dd995eecf98f": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 8
+              },
+              "9f943f76-e1c9-e2c5-a256-fd0afcaf3751": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 16
+              },
+              "d6b708ef-dd59-1596-33bf-e8ceb9d4d2c9": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 20
+              },
+              "89af1eb1-32d5-b8e8-2fa5-26339fd129e2": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 8,
+                "col": 0
+              },
+              "a99b84b7-89bd-2da5-4473-de383f9f356f": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 12,
+                "col": 12
+              },
+              "2222e674-f72a-dc4d-e822-9ebcd823b2c8": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 12,
+                "col": 18
+              },
+              "59b3729b-31cf-1c42-62cc-177787a2c108": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 0
+              },
+              "419115b5-5244-52b7-0425-9ccf7a2904bd": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 8,
+                "col": 12
+              },
+              "fd6a7f84-c972-a212-4159-318397160d0b": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 12
+              },
+              "a593b4de-cca4-474b-86a6-d97689d18e16": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 12
+              },
+              "c7c6aba2-6505-2ed5-dbd6-a9699c34b39c": {
+                "sizeX": 12,
+                "sizeY": 4,
+                "mobileHeight": null,
+                "row": 12,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      },
+      "data_logger_detail": {
+        "name": "${entityName}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a88b9e11-4e8c-5b02-28b9-f62fa750382b": {
+                "sizeX": 8,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              },
+              "461de77a-7f2d-bd04-0591-b949284b1a5b": {
+                "sizeX": 8,
+                "sizeY": 4,
+                "row": 0,
+                "col": 8
+              },
+              "745fbd02-379d-f887-3a77-d6b9316a7e2d": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 0
+              },
+              "c2f28e0b-418f-9302-3171-dec0622a23e4": {
+                "sizeX": 8,
+                "sizeY": 5,
+                "mobileHeight": null,
+                "row": 4,
+                "col": 8
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margins": [
+                10,
+                10
+              ],
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "b3c9b442-f2d2-114f-89bd-ff37bc711333": {
+        "id": "b3c9b442-f2d2-114f-89bd-ff37bc711333",
+        "alias": "Water Nodes",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "WATER NODE",
+          "deviceNameFilter": ""
+        }
+      },
+      "809c3036-1f86-acd3-1b76-102bfad08e55": {
+        "id": "809c3036-1f86-acd3-1b76-102bfad08e55",
+        "alias": "Water Locations",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetType": "LOCATION",
+          "assetNameFilter": ""
+        }
+      },
+      "6cb610f1-7783-016a-d6db-740654fa280c": {
+        "id": "6cb610f1-7783-016a-d6db-740654fa280c",
+        "alias": "Selected Location",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "timewindow": {
+      "history": {
+        "interval": 86400000,
+        "timewindowMs": 864000000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": false,
+      "showEntitiesSelect": false,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": false,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)"
+    }
+  },
+  "name": "Overview v2"
+}
