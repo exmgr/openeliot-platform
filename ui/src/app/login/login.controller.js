@@ -18,7 +18,7 @@
 /* eslint-enable import/no-unresolved, import/default */
 
 /*@ngInject*/
-export default function LoginController(toast, loginService, userService/*, $rootScope, $log, $translate*/) {
+export default function LoginController(toast, loginService, userService, types, $state/*, $rootScope, $log, $translate*/) {
     var vm = this;
 
     vm.logoSvg = 'static/logo.png';
@@ -35,7 +35,7 @@ export default function LoginController(toast, loginService, userService/*, $roo
             var token = response.data.token;
             var refreshToken = response.data.refreshToken;
             userService.setUserFromJwtToken(token, refreshToken, true);
-        }, function fail(/*response*/) {
+        }, function fail(response) {
             /*if (response && response.data && response.data.message) {
                 toast.showError(response.data.message);
             } else if (response && response.statusText) {
@@ -43,6 +43,11 @@ export default function LoginController(toast, loginService, userService/*, $roo
             } else {
                 toast.showError($translate.instant('error.unknown-error'));
             }*/
+            if (response && response.data && response.data.errorCode) {
+                if (response.data.errorCode === types.serverErrorCode.credentialsExpired) {
+                    $state.go('login.resetExpiredPassword', {resetToken: response.data.resetToken});
+                }
+            }
         });
     }
 
