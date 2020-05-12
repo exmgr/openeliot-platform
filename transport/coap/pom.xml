@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.thingsboard</groupId>
-        <version>2.4.3</version>
+        <version>2.5.0</version>
         <artifactId>transport</artifactId>
     </parent>
     <groupId>org.thingsboard.transport</groupId>
@@ -260,7 +260,7 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.fortasoft</groupId>
+                <groupId>org.thingsboard</groupId>
                 <artifactId>gradle-maven-plugin</artifactId>
                 <configuration>
                     <tasks>
