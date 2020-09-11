@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.thingsboard.server.common.msg.kv;
+package org.thingsboard.server.common.msg.queue;
 
-import java.io.Serializable;
-import java.util.List;
+import org.thingsboard.server.common.data.id.RuleNodeId;
 
-import org.thingsboard.server.common.data.kv.AttributeKey;
-import org.thingsboard.server.common.data.kv.AttributeKvEntry;
+public class RuleNodeInfo {
+    private final String label;
 
-public interface AttributesKVMsg extends Serializable {
+    public RuleNodeInfo(RuleNodeId id, String ruleChainName, String ruleNodeName) {
+        this.label = "[RuleChain: " + ruleChainName + "|RuleNode: " + ruleNodeName + "(" + id + ")]";
+    }
 
-    List<AttributeKvEntry> getClientAttributes();
-    List<AttributeKvEntry> getSharedAttributes();
-    List<AttributeKey> getDeletedAttributes();
+    @Override
+    public String toString() {
+        return label;
+    }
 }
